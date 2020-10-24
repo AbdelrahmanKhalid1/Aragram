@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "800784004999",
+    "firebase_url": "https://aragram-597df.firebaseio.com",
+    "project_id": "aragram-597df",
+    "storage_bucket": "aragram-597df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800784004999:android:28cbe09bdf7190c56c4522",
+        "android_client_info": {
+          "package_name": "com.example.aragram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800784004999-crmdgijvkvtjvoa3v3u8eeih8kafjbt1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aragram",
+            "certificate_hash": "7b9064e4692a482bdd141ea208728555240f0448"
+          }
+        },
+        {
+          "client_id": "800784004999-4rb658kv41clg0t3lf855veqlqiq8kgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADGAjpkND6iknsqMEGXVmZ_9dxjR6wlOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800784004999-4rb658kv41clg0t3lf855veqlqiq8kgt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
