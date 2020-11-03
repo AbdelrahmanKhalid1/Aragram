@@ -1,7 +1,10 @@
-package com.example.aragram;
+package com.example.aragram.ui;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
+import com.example.aragram.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,13 +25,12 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
+        Toast.makeText(this, "lol"+navView.getSelectedItemId(), Toast.LENGTH_SHORT).show();
 
         mAuth = FirebaseAuth.getInstance();
+        Toast.makeText(this, "username"+mAuth.getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mAuth.signInWithEmailAndPassword("admin@gmail.com", "admin123");
-    }
+
+
 }

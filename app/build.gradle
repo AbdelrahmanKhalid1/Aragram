@@ -10,10 +10,9 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -32,12 +31,24 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.1'
     implementation 'androidx.navigation:navigation-ui:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation files('libs\\CircleImageView-master\\CircleImageView-master\\gradle\\wrapper\\gradle-wrapper.jar')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    def lifecycle_version = "2.2.0"
+    def arch_version = "2.1.0"
 
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
     //firebase
-    implementation 'com.google.firebase:firebase-auth:19.4.0'
-//    implementation platform('com.google.firebase:firebase-bom:25.12.0')
-
+    implementation 'com.google.firebase:firebase-auth:20.0.0'
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-database:19.5.1'
+    implementation 'com.google.firebase:firebase-core:18.0.0'
+    implementation 'com.google.firebase:firebase-firestore:22.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

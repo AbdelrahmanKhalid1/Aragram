@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.RegisterActivty"
+    android:padding="15dp"
+    android:background="@android:color/background_dark">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/instagramicon"
+        android:layout_alignParentTop="true"
+        android:id="@+id/aragram_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="40sp"
+        android:fontFamily="monospace"
+        android:layout_below="@id/aragram_icon"
+        android:id="@+id/welcomeText"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SignUp to share photos with your friends "
+        android:textSize="15sp"
+        android:fontFamily="casual"
+        android:layout_below="@id/welcomeText"
+        android:id="@+id/descText"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="Username"
+        android:id="@+id/username_register"
+        android:layout_below="@id/descText"
+        android:background="@drawable/edit_shape"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/abdo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="Password"
+        android:layout_below="@id/username_register"
+        android:layout_marginTop="10dp"
+        android:id="@+id/password_register"
+        android:background="@drawable/edit_shape"
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/abdo"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="Gender"
+        android:layout_below="@id/password_register"
+        android:layout_marginTop="10dp"
+        android:id="@+id/gender_register"
+        android:background="@drawable/edit_shape"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/abdo"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="Age"
+        android:layout_below="@id/gender_register"
+        android:layout_marginTop="10dp"
+        android:id="@+id/age_register"
+        android:background="@drawable/edit_shape"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/abdo"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:layout_below="@id/age_register"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/register_button"
+        android:background="@drawable/edit_shape2"
+
+        />
+
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:id="@+id/register_progressbar"
+
+
+        />
+
+</RelativeLayout>
