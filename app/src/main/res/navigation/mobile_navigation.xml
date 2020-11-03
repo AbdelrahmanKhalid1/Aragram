@@ -16,4 +16,11 @@
         android:name="com.example.aragram.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.aragram.ui.searchprofile.fragment.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/search_fragment"/>
+
+
 </navigation>

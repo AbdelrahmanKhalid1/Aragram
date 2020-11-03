@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity"
+    android:padding="16dp"
+    android:background="@android:color/black">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/insta"
+        android:layout_alignParentTop="true"
+        android:id="@+id/aragram_icon"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textSize="40sp"
+        android:fontFamily="monospace"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/aragram_icon"
+        android:id="@+id/welcomeText"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="Username"
+        android:id="@+id/username_login"
+        android:layout_below="@id/welcomeText"
+
+        android:background="@drawable/edit_shape"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/abdo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="Password"
+        android:id="@+id/password_login"
+        android:layout_below="@id/username_login"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_shape"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/abdo"
+        android:inputType="textPassword"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:layout_below="@id/password_login"
+        android:layout_centerInParent="true"
+        android:id="@+id/button_login"
+        android:background="@drawable/edit_shape2"
+        android:layout_marginTop="15dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create a new account"
+        android:layout_below="@id/button_login"
+        android:layout_toEndOf="@id/button_login"
+        android:layout_marginTop="20dp"
+        android:id="@+id/create_button"
+        android:background="@drawable/edit_shape3"
+        />
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:id="@+id/login_progressbar"
+
+
+        />
+
+
+
+</RelativeLayout>

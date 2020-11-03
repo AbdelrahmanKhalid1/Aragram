@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="abdo">#b3b3b3</color>
+    <color name="lightblack">#262626</color>
+    <color name="black">#000000 </color>
+    <color name="white">@android:color/white</color>
+    <color name="lightBlue">@android:color/holo_blue_light</color>
 </resources>
