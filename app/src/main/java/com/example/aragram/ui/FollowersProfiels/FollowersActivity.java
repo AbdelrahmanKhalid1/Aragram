@@ -51,7 +51,7 @@ public class FollowersActivity extends AppCompatActivity {
         followersViewModel.getFollowersList().observe(this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
-                Toast.makeText(FollowersActivity.this, "kam"+users.size()+" "+users.get(0).getUsername(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(FollowersActivity.this, "kam"+users.size()+" "+users.get(0).getUsername(), Toast.LENGTH_SHORT).show();
                 finalUsers.clear();
                 finalUsers.addAll(users);
                 searchAdapter.notifyDataSetChanged();

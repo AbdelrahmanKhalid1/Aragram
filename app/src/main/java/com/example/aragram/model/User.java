@@ -67,6 +67,7 @@ public class User implements Serializable {
         this.age = age;
         this.gender = gender;
         this.bio=bio;
+        this.website=website;
         followers=0;
         following=0;
         posts =0;

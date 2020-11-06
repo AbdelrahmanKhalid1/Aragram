@@ -43,6 +43,7 @@ public class ProfileFragment extends Fragment {
     ProfileViewModel profileViewModel;
     User finaluser;
     ProgressBar progressBar;
+    TextView websiteUser;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         final View v= inflater.inflate(R.layout.fragment_profile, container, false);
@@ -105,6 +106,7 @@ public class ProfileFragment extends Fragment {
             Picasso.with(getContext()).load(finaluser.getUserProfilePicture()).into(profilePicture);
 
         }
+        websiteUser.setText(finaluser.getWebsite());
     }
 
     private void initializeViews(View v)
@@ -120,6 +122,7 @@ public class ProfileFragment extends Fragment {
         //messageButton=v.findViewById(R.id.message_button);
         progressBar.setVisibility(View.VISIBLE);
         profilePicture=v.findViewById(R.id.user_profile_picture);
+        websiteUser=v.findViewById(R.id.website_text);
     }
 
 }

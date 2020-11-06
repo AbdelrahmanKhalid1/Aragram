@@ -1,29 +1,32 @@
 package com.example.aragram.ui.searchprofile.fragment;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.aragram.Repository.UserRepository;
 import com.example.aragram.model.User;
 
 import java.util.List;
 
 public class SearchFragmentViewModel extends ViewModel {
-    MutableLiveData<List<User>> usersResult;
-    MutableLiveData<List<User>> filterdUsers;
-    SearchFragmentRepository searchFragmentRepository;
+    LiveData<List<User>> usersResult;
+    LiveData<List<User>> filterdUsers;
+    UserRepository userRepository;
 
     public SearchFragmentViewModel() {
-        searchFragmentRepository= new SearchFragmentRepository();
-        usersResult=searchFragmentRepository.getUsersResult();
-        filterdUsers=searchFragmentRepository.getFilterdUsers();
+        userRepository= UserRepository.getInstance();
+        usersResult=userRepository.getUsersResult();
+        filterdUsers=userRepository.getFilterdUsers();
     }
 
     public void getProfiles()
     {
-     searchFragmentRepository.getProfiles();
+        userRepository.getProfiles();
     }
     public void getFilterProfiles(String s)
     {
-     searchFragmentRepository.getFilterProfiles(s);
+        userRepository.getFilterProfiles(s);
     }
+
 }

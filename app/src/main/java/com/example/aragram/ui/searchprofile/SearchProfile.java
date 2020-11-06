@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.aragram.R;
 import com.example.aragram.model.User;
 import com.example.aragram.ui.FollowersProfiels.FollowersActivity;
+import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 
@@ -31,6 +32,7 @@ public class SearchProfile extends AppCompatActivity {
     TextView toolbarText;
     SearchProfileViewModel searchProfileViewModel;
     Boolean checkUnFollow=false;
+    TextView bioUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,7 @@ public class SearchProfile extends AppCompatActivity {
         toolbarText=findViewById(R.id.toolbar_text);
         searchProfileViewModel= new ViewModelProvider(this).get(SearchProfileViewModel.class);
         profilePictureImage=findViewById(R.id.user_profile_picture);
+        bioUser=findViewById(R.id.textView4);
 
     }
 
@@ -107,10 +110,12 @@ public class SearchProfile extends AppCompatActivity {
         followerView.setText(String.valueOf(user.getFollowers()));
         followingView.setText(String.valueOf(user.getFollowing()));
         toolbarText.setText(user.getUsername());
-        if(user.getProfilePicture()!=null)
+        if(user.getUserProfilePicture()!=null)
         {
-            profilePictureImage.setImageBitmap(user.getProfilePicture());
+            Picasso.with(this).load(user.getUserProfilePicture()).into(profilePictureImage);
         }
+        bioUser.setText(user.getBio());
+
 
     }
 

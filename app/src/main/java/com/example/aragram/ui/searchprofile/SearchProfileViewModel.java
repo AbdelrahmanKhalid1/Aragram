@@ -4,19 +4,20 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.aragram.Repository.UserRepository;
 import com.example.aragram.model.User;
 
 public class SearchProfileViewModel extends ViewModel {
-    MutableLiveData<Boolean> mIsUpdating=new MutableLiveData<>();
-    MutableLiveData<Boolean> mIsUnFollowed=new MutableLiveData<>();
-    MutableLiveData<Boolean> mIsFollowed=new MutableLiveData<>();
-    SearchProfileRepository searchProfileRepository;
+    LiveData<Boolean> mIsUpdating=new MutableLiveData<>();
+    LiveData<Boolean> mIsUnFollowed=new MutableLiveData<>();
+    LiveData<Boolean> mIsFollowed=new MutableLiveData<>();
+    UserRepository userRepository;
 
     public SearchProfileViewModel() {
-        searchProfileRepository=new SearchProfileRepository();
-        mIsUpdating=searchProfileRepository.getmIsUpdating();
-        mIsFollowed=searchProfileRepository.getmIsFollowed();
-        mIsUnFollowed=searchProfileRepository.getmIsUnFollowed();
+        userRepository=UserRepository.getInstance();
+        mIsUpdating=userRepository.getmIsUpdating();
+        mIsFollowed=userRepository.getmIsFollowed();
+        mIsUnFollowed=userRepository.getmIsUnFollowed();
 
     }
 
@@ -34,16 +35,16 @@ public class SearchProfileViewModel extends ViewModel {
     }
     public void followPerson(String name)
     {
-        searchProfileRepository.followPerson(name);
+        userRepository.followPerson(name);
     }
     public void checkPerson(final User user)
     {
-        searchProfileRepository.checkPerson(user);
+        userRepository.checkPerson(user);
 
     }
     public void unFollowPerson(String name)
     {
-        searchProfileRepository.unFollowPerson(name);
+        userRepository.unFollowPerson(name);
 
     }
 

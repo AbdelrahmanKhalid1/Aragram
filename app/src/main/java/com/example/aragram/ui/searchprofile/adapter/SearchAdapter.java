@@ -1,6 +1,7 @@
 package com.example.aragram.ui.searchprofile.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +9,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aragram.R;
 import com.example.aragram.model.User;
+import com.example.aragram.ui.FollowersProfiels.FollowersViewModel;
+import com.example.aragram.ui.searchprofile.SearchProfileViewModel;
+import com.example.aragram.ui.searchprofile.fragment.SearchFragmentViewModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -28,7 +37,9 @@ public class SearchAdapter  extends RecyclerView.Adapter<SearchAdapter.SearchVie
     public SearchAdapter(List<User> users, Context context) {
         this.users = users;
         this.context=context;
+
     }
+
 
     @NonNull
     @Override
@@ -41,8 +52,16 @@ public class SearchAdapter  extends RecyclerView.Adapter<SearchAdapter.SearchVie
         holder.profileName.setText(users.get(position).getUsername());
         if(users.get(position).getUserProfilePicture()!=null)
         {
+            Log.d("what?", "onBindViewHolder: "+users.get(position).getUsername());
             Picasso.with(context).load(users.get(position).getUserProfilePicture()).into(holder.profileImage);
         }
+        else
+        {
+            Picasso.with(context).load(R.mipmap.profile_default).into(holder.profileImage);
+
+        }
+
+
     }
 
     @Override
