@@ -2,22 +2,9 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@android:color/black"
+    android:background="?colorPrimary"
     android:layout_height="?actionBarSize"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:id="@+id/main_toolbar"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar_text"
-        style="@style/Toolbar.TitleText"
-        android:text="Aragram"
-        android:textStyle="italic"
-        android:fontFamily="casual"
-        android:textColor="@android:color/white"
-        android:paddingLeft="16dp" />
-</androidx.appcompat.widget.Toolbar>
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
