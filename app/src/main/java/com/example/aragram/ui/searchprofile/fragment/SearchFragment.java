@@ -14,8 +14,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,9 +45,12 @@ public class SearchFragment extends Fragment {
             @Override
             public void onChanged(List<User> users) {
                 //Toast.makeText(getContext(), "fuckk"+users.get(0).getUsername(), Toast.LENGTH_SHORT).show();
+                Log.d("what?", "onChanged:  lol???");
                 finalFiltredUsers.clear();
                 finalFiltredUsers.addAll(users);
                 searchAdapter.notifyDataSetChanged();
+
+
                 //searchAdapter=new SearchAdapter(finalFiltredUsers);
 
             }
@@ -70,6 +75,7 @@ public class SearchFragment extends Fragment {
         viewModel.filterdUsers.observe(getViewLifecycleOwner(), new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
+                Log.d("what?", "onChanged:  lol???");
                 finalFiltredUsers.clear();
                 finalFiltredUsers.addAll(users);
                 searchAdapter.notifyDataSetChanged();
@@ -84,16 +90,19 @@ public class SearchFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
        return v;
     }
 
     private void initAll(View v) {
+
         profiles=v.findViewById(R.id.users_recyclerview);
         profileName=v.findViewById(R.id.search_user);
         profiles.setLayoutManager(new LinearLayoutManager(getContext()));
         viewModel= new ViewModelProvider(this).get(SearchFragmentViewModel.class);
         viewModel.getProfiles();
-        searchAdapter=new SearchAdapter(finalFiltredUsers,getContext());
+        searchAdapter=new SearchAdapter(finalFiltredUsers,getContext(),this);
         profiles.setAdapter(searchAdapter);
 
     }

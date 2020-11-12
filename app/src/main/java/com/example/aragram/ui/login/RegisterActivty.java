@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,7 +42,7 @@ public class RegisterActivty extends AppCompatActivity {
                 if(aBoolean)
                 {
                     progressBar.setVisibility(View.GONE);
-
+                    Toast.makeText(RegisterActivty.this, "i am hereeeeeeee", Toast.LENGTH_SHORT).show();
                     Intent intent= new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
 
@@ -58,9 +59,24 @@ public class RegisterActivty extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
-                loginViewModel.register(new User(username_text.getText().toString(),
-                        password_text.getText().toString(),age_text.getText().toString(),
-                        gender_text.getText().toString()," "," "));
+                if(username_text.getText().toString().length()<2)
+                {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(RegisterActivty.this, "Username is too small", Toast.LENGTH_SHORT).show();
+
+                }
+                else if(password_text.getText().toString().length()<6)
+                {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(RegisterActivty.this, "Password must be bigger than 6 digits", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    loginViewModel.register(new User(username_text.getText().toString(),
+                            password_text.getText().toString(),age_text.getText().toString(),
+                            gender_text.getText().toString()," "," "));
+                }
+
+
             }
         });
     }

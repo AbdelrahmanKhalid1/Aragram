@@ -4,24 +4,25 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.aragram.Repository.UserRepository;
 import com.example.aragram.model.User;
 
 import java.util.List;
 
 public class FollowersViewModel extends ViewModel {
-    MutableLiveData<List<User>> followersList;
-    FollowersRepository followersRepository;
-    MutableLiveData<List<User>> followingList;
+    LiveData<List<User>> followersList;
+    UserRepository userRepository;
+    LiveData<List<User>> followingList;
 
     public FollowersViewModel() {
-        followersRepository=new FollowersRepository();
-        followersList=followersRepository.getFollowersList();
-        followingList=followersRepository.getFollowingList();
+        userRepository=UserRepository.getInstance();
+        followersList=userRepository.getFollowersList();
+        followingList=userRepository.getFollowingList();
     }
 
     public  void getFollowersProfiles(String username)
     {
-        followersRepository.getFollowersProfiles(username);
+        userRepository.getFollowersProfiles(username);
 
     }
     public LiveData<List<User>> getFollowersList()
@@ -34,6 +35,6 @@ public class FollowersViewModel extends ViewModel {
     }
     public void getFollowingProfiles(String username)
     {
-        followersRepository.getFollowingProfiles(username);
+        userRepository.getFollowingProfiles(username);
     }
 }

@@ -52,6 +52,7 @@ public class Edit_Profile extends AppCompatActivity {
         saveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Edit_Profile.this, "hi "+changeWebsite.getText().toString(), Toast.LENGTH_SHORT).show();
                 User user=new User(changeUserName.getText().toString(),changePassword.getText().toString()
                 ,"","",changeBio.getText().toString(),changeWebsite.getText().toString());
 

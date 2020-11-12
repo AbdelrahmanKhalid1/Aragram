@@ -7,17 +7,18 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.aragram.Repository.UserRepository;
 import com.example.aragram.model.User;
 
 public class EditProfileViewModel extends ViewModel {
-    MutableLiveData<Boolean> changeStatus;
-    MutableLiveData<Boolean> uploadPhotoStatus;
-    EditProfileRepository editProfileRepository;
+    LiveData<Boolean> changeStatus;
+    LiveData<Boolean> uploadPhotoStatus;
+    UserRepository userRepository;
 
     public EditProfileViewModel() {
-        editProfileRepository=new EditProfileRepository();
-        changeStatus=editProfileRepository.getChangeStatus();
-        uploadPhotoStatus=editProfileRepository.getUploadPhotoStatus();
+        userRepository=UserRepository.getInstance();
+        changeStatus=userRepository.getChangeStatus();
+        uploadPhotoStatus=userRepository.getUploadPhotoStatus();
 
     }
     public LiveData<Boolean> getPhotoStatus()
@@ -30,11 +31,11 @@ public class EditProfileViewModel extends ViewModel {
     }
     public void makeChange(User user)
     {
-        editProfileRepository.makeChange(user);
+        userRepository.makeChange(user);
 
     }
     public void uploadFile(String s, Uri uri)
     {
-        editProfileRepository.uploadFile(s,uri);
+        userRepository.uploadFile(s,uri);
     }
 }

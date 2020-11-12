@@ -7,14 +7,12 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.aragram.Repository.UserRepository;
 import com.example.aragram.model.User;
-import com.example.aragram.ui.FollowersProfiels.FollowersRepository;
-
-import java.util.List;
 
 public class ProfileViewModel extends ViewModel {
-    MutableLiveData<User> userMutableLiveData;
-    ProfileRepository profileRepository;
+    LiveData<User> userMutableLiveData;
+    UserRepository userRepository;
 
     Context context;
 
@@ -22,8 +20,8 @@ public class ProfileViewModel extends ViewModel {
 
     public ProfileViewModel(Context context) {
         this.context = context;
-        profileRepository=new ProfileRepository(context);
-        userMutableLiveData=profileRepository.getUserMutableLiveData();
+        userRepository=UserRepository.getInstance();
+        userMutableLiveData=userRepository.getUserMutableLiveData();
 
     }
 
@@ -31,7 +29,7 @@ public class ProfileViewModel extends ViewModel {
     public void getProfileData()
     {
         Log.d("page1", "getProfileData: hiiiiii");
-        profileRepository.getProfileData();
+        userRepository.getProfileData();
 
     }
 
