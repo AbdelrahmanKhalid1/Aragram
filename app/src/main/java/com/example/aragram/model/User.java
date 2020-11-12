@@ -1,54 +1,12 @@
 package com.example.aragram.model;
 
-import android.graphics.Bitmap;
+public class User {
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-public class User implements Serializable {
-    private String username;
-    private String password;
-    private String age;
-    private String gender;
-    private int id;
-    private int followers;
-    private int following;
-    private Bitmap profilePicture;
-
-    public String getUserProfilePicture() {
-        return userProfilePicture;
-    }
-
-    public void setUserProfilePicture(String userProfilePicture) {
-        this.userProfilePicture = userProfilePicture;
-    }
-
-    private String userProfilePicture;
-
-    public Bitmap getProfilePicture() {
-        return profilePicture;
-    }
-
-    public void setProfilePicture(Bitmap profilePicture) {
-        this.profilePicture = profilePicture;
-    }
-
-    public void setPosts(int posts) {
-        this.posts = posts;
-    }
-
-    private int posts;
-    private String bio;
-    private String website;
-
-    public String getWebsite() {
-        return website;
-    }
+    private String name;
 
     public User() {
     }
-
+  
     public void setWebsite(String website) {
         this.website = website;
     }
@@ -134,11 +92,11 @@ public class User implements Serializable {
         return age;
     }
 
-    public String getGender() {
-        return gender;
+    public User(String name) {
+        this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 }

@@ -9,14 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.FollowersProfiels.FollowersActivity"></activity>
-        <activity android:name=".ui.searchprofile.SearchProfile" />
-        <activity android:name=".ui.profile.Edit_Profile" />
-        <activity android:name=".ui.login.RegisterActivty" />
-        <activity
-            android:name=".ui.MainActivity"
-            android:label="username" />
-        <activity android:name=".ui.login.LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,5 +17,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

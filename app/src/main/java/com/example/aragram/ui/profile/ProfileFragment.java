@@ -1,38 +1,16 @@
 package com.example.aragram.ui.profile;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.aragram.R;
-import com.example.aragram.model.User;
-import com.example.aragram.ui.FollowersProfiels.FollowersActivity;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 public class ProfileFragment extends Fragment {
-    private static final String TAG = "MainActivity";
-    private FirebaseFirestore db;
-
-    Toolbar toolbar;
-    TextView usernameToolbar;
-    //FirebaseAuth mAuth= FirebaseAuth.getInstance();
-    ImageView profilePicture;
 
     TextView noOfPosts;
     TextView noOfFollowers;
@@ -123,6 +101,4 @@ public class ProfileFragment extends Fragment {
         progressBar.setVisibility(View.VISIBLE);
         profilePicture=v.findViewById(R.id.user_profile_picture);
         websiteUser=v.findViewById(R.id.website_text);
-    }
-
 }
