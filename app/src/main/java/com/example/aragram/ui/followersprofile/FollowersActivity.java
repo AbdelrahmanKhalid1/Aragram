@@ -1,20 +1,18 @@
-package com.example.aragram.ui.FollowersProfiels;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.aragram.ui.followersprofile;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aragram.R;
 import com.example.aragram.model.User;
-import com.example.aragram.ui.searchprofile.SearchProfile;
+import com.example.aragram.ui.searchprofile.UserActivity;
 import com.example.aragram.ui.searchprofile.adapter.SearchAdapter;
 
 import java.util.ArrayList;
@@ -60,7 +58,7 @@ public class FollowersActivity extends AppCompatActivity {
         searchAdapter.setmListner(new SearchAdapter.OnItemClickListner() {
             @Override
             public void onClick(int position) {
-                Intent intent =new Intent(getBaseContext(), SearchProfile.class);
+                Intent intent =new Intent(getBaseContext(), UserActivity.class);
                 intent.putExtra("user",finalUsers.get(position));
                 startActivity(intent);
             }

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="650dp">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageButton
+            android:id="@+id/cardview_profile_3dots"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_alignBaseline="@id/cardview_profile_image"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_more_vert_24" />
+
+        <ImageButton
+            android:id="@+id/cardview_bookmarket"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/cardView_relative_of_iamge"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:src="@drawable/bookmark" />
+
+        <LinearLayout
+            android:id="@+id/cardview_linearlayot"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/cardView_relative_of_iamge"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/cardview_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                android:src="@drawable/love" />
+
+            <ImageButton
+                android:id="@+id/cardview_comment_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                android:src="@drawable/message_icon1" />
+
+            <ImageButton
+                android:id="@+id/cardview_send"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                android:src="@drawable/send" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/cardView_relative_of_iamge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview_profile_image">
+
+            <ImageView
+                android:id="@+id/cardview_post"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:src="@color/design_default_color_on_secondary" />
+
+            <ImageView
+                android:translationZ="5dp"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_favorite_241"
+                android:id="@+id/cardView_relative_of_fav"
+                android:visibility="invisible"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cardview_profile_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_toEndOf="@id/cardview_profile_image"
+            android:text="Profile Name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/cardview_likes_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardview_linearlayot"
+            android:layout_marginLeft="20dp"
+            android:text="Likes"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/cardview_description_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/cardview_likes_txt"
+            android:layout_below="@id/cardview_likes_txt"
+            android:layout_marginTop="15dp"
+            android:text="Description"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/cardview_comments_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/cardview_description_txt"
+            android:layout_below="@id/cardview_description_txt"
+            android:layout_marginTop="15dp"
+            android:text="view comments" />
+
+        <TextView
+            android:id="@+id/cardview_postedtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/cardview_comments_txt"
+            android:layout_below="@id/cardview_comments_txt"
+            android:layout_marginTop="15dp"
+            android:text="Psted Time" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cardview_profile_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_baseline_camera_alt_24" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

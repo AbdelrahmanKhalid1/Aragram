@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageButton
+            android:src="@drawable/ic_baseline_camera_alt_24"
+            android:background="@null"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>

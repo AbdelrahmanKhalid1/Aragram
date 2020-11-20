@@ -9,21 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aragram.R;
 import com.example.aragram.model.User;
-import com.example.aragram.ui.searchprofile.SearchProfile;
+import com.example.aragram.ui.searchprofile.UserActivity;
 import com.example.aragram.ui.searchprofile.adapter.SearchAdapter;
 
 import java.util.ArrayList;
@@ -33,7 +30,7 @@ public class SearchFragment extends Fragment {
     EditText profileName;
     RecyclerView profiles;
     SearchAdapter searchAdapter;
-    SearchFragmentViewModel viewModel;
+    SearchViewModel viewModel;
     List<User> finalFiltredUsers=new ArrayList<>();
     @Nullable
     @Override
@@ -85,7 +82,7 @@ public class SearchFragment extends Fragment {
         searchAdapter.setmListner(new SearchAdapter.OnItemClickListner() {
             @Override
             public void onClick(int position) {
-                Intent intent= new Intent(getActivity(), SearchProfile.class);
+                Intent intent= new Intent(getActivity(), UserActivity.class);
                 intent.putExtra("user",finalFiltredUsers.get(position));
                 startActivity(intent);
             }
@@ -100,9 +97,9 @@ public class SearchFragment extends Fragment {
         profiles=v.findViewById(R.id.users_recyclerview);
         profileName=v.findViewById(R.id.search_user);
         profiles.setLayoutManager(new LinearLayoutManager(getContext()));
-        viewModel= new ViewModelProvider(this).get(SearchFragmentViewModel.class);
+        viewModel= new ViewModelProvider(this).get(SearchViewModel.class);
         viewModel.getProfiles();
-        searchAdapter=new SearchAdapter(finalFiltredUsers,getContext(),this);
+        searchAdapter=new SearchAdapter(finalFiltredUsers,requireContext());
         profiles.setAdapter(searchAdapter);
 
     }

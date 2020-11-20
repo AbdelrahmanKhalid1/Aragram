@@ -5,16 +5,6 @@
     android:background="?colorPrimary"
     android:layout_height="?actionBarSize"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:id="@+id/main_toolbar">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/toolbar_text"
-        style="@style/Toolbar.TitleText"
-        android:text="Aragram"
-        android:textStyle="italic"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@android:color/white"
-        android:paddingLeft="16dp" />
-</androidx.appcompat.widget.Toolbar>
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+

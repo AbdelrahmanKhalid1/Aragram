@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.searchprofile.SearchProfile"
+    tools:context=".ui.searchprofile.UserActivity"
     android:background="@android:color/black">
 
     <Button
@@ -62,7 +62,7 @@
         android:id="@+id/number_of_following"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/include"
+        android:layout_below="@id/toolbar"
         android:layout_centerInParent="true"
         android:layout_marginStart="90dp"
         android:layout_marginTop="39dp"
@@ -74,7 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/number_of_followers"
-        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:onClick="showFollowing"/>
 
     <TextView
@@ -98,7 +98,7 @@
         android:id="@+id/number_of_followers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/include"
+        android:layout_below="@id/toolbar"
         android:layout_centerInParent="true"
         android:layout_marginStart="68dp"
         android:layout_marginTop="39dp"
@@ -111,10 +111,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/number_of_posts"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -123,11 +123,11 @@
         android:id="@+id/user_profile_picture"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_below="@id/include"
+        android:layout_below="@id/toolbar"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:src="@mipmap/ic_launcher"/>
 
     <TextView
@@ -135,7 +135,7 @@
         android:id="@+id/number_of_posts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/include"
+        android:layout_below="@id/toolbar"
         android:layout_centerInParent="true"
         android:layout_marginStart="40dp"
         android:layout_marginTop="39dp"
@@ -144,7 +144,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/user_profile_picture"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:textColor="@android:color/white"

@@ -1,10 +1,9 @@
-package com.example.aragram.ui.FollowersProfiels;
+package com.example.aragram.ui.followersprofile;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.aragram.Repository.UserRepository;
+import com.example.aragram.repository.UserRepository;
 import com.example.aragram.model.User;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public class FollowersViewModel extends ViewModel {
     LiveData<List<User>> followingList;
 
     public FollowersViewModel() {
-        userRepository=UserRepository.getInstance();
+        userRepository= UserRepository.getInstance();
         followersList=userRepository.getFollowersList();
         followingList=userRepository.getFollowingList();
     }

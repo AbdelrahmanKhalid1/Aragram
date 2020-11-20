@@ -1,14 +1,7 @@
 package com.example.aragram.ui.profile;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -19,16 +12,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.aragram.R;
 import com.example.aragram.model.User;
 import com.example.aragram.ui.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-
-public class Edit_Profile extends AppCompatActivity {
+public class EditProfileActivity extends AppCompatActivity {
 
     TextView changeProfile;
     EditText changeUserName;
@@ -52,7 +47,7 @@ public class Edit_Profile extends AppCompatActivity {
         saveProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Edit_Profile.this, "hi "+changeWebsite.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfileActivity.this, "hi "+changeWebsite.getText().toString(), Toast.LENGTH_SHORT).show();
                 User user=new User(changeUserName.getText().toString(),changePassword.getText().toString()
                 ,"","",changeBio.getText().toString(),changeWebsite.getText().toString());
 
@@ -68,7 +63,7 @@ public class Edit_Profile extends AppCompatActivity {
                 if (aBoolean)
                 {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(Edit_Profile.this, "Edit Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditProfileActivity.this, "Edit Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent= new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
@@ -78,7 +73,7 @@ public class Edit_Profile extends AppCompatActivity {
             @Override
             public void onChanged(Boolean aBoolean) {
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(Edit_Profile.this, "Profile Picture Change Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfileActivity.this, "Profile Picture Change Successfully", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -4,10 +4,9 @@ import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.aragram.Repository.UserRepository;
+import com.example.aragram.repository.UserRepository;
 import com.example.aragram.model.User;
 
 public class ProfileViewModel extends ViewModel {
@@ -20,7 +19,7 @@ public class ProfileViewModel extends ViewModel {
 
     public ProfileViewModel(Context context) {
         this.context = context;
-        userRepository=UserRepository.getInstance();
+        userRepository= UserRepository.getInstance();
         userMutableLiveData=userRepository.getUserMutableLiveData();
 
     }

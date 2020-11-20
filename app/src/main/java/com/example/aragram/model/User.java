@@ -1,34 +1,81 @@
 package com.example.aragram.model;
 
-public class User {
+import android.graphics.Bitmap;
 
-    private String name;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class User implements Serializable {
+
+    private String username;
+    private String password;
+    private String age;
+    private String gender;
+    private int id;
+    private int followers;
+    private int following;
+    private Bitmap profilePicture;
+
+    public User(String username) {
+        this.username = username;
+    }
+
+    public String getUserProfilePicture() {
+        return userProfilePicture;
+    }
+
+    public void setUserProfilePicture(String userProfilePicture) {
+        this.userProfilePicture = userProfilePicture;
+    }
+
+    private String userProfilePicture;
+
+    public Bitmap getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(Bitmap profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
+    public void setPosts(int posts) {
+        this.posts = posts;
+    }
+
+    private int posts;
+    private String bio;
+    private String website;
+
+    public String getWebsite() {
+        return website;
+    }
 
     public User() {
     }
-  
+
     public void setWebsite(String website) {
         this.website = website;
     }
 
-    List<User> followersUsers =new ArrayList<>();
-    List<User> followingUsers =new ArrayList<>();
+    List<User> followersUsers = new ArrayList<>();
+    List<User> followingUsers = new ArrayList<>();
 
     public int getPosts() {
         return posts;
     }
 
 
-    public User(String username, String password, String age, String gender, String bio,String website) {
+    public User(String username, String password, String age, String gender, String bio, String website) {
         this.username = username;
         this.password = password;
         this.age = age;
         this.gender = gender;
-        this.bio=bio;
-        this.website=website;
-        followers=0;
-        following=0;
-        posts =0;
+        this.bio = bio;
+        this.website = website;
+        followers = 0;
+        following = 0;
+        posts = 0;
 
     }
 
@@ -92,11 +139,11 @@ public class User {
         return age;
     }
 
-    public User(String name) {
-        this.name = name;
+    public String getGender() {
+        return gender;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 }

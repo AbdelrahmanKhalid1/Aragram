@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.Edit_Profile"
-    android:background="@android:color/black"
-    >
+    tools:context=".ui.profile.EditProfileActivity"
+    android:background="@android:color/black">
 
     <ProgressBar
         android:layout_width="50dp"
@@ -80,11 +79,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
-
-                />
-
-
+                android:textColorHint="@android:color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -155,11 +150,7 @@
                 android:inputType="textPersonName"
                 android:singleLine="true"
                 android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
-
-                />
-
-
+                android:textColorHint="@android:color/white" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 

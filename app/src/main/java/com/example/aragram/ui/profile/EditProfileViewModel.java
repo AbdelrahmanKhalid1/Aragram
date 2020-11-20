@@ -1,13 +1,11 @@
 package com.example.aragram.ui.profile;
 
-import android.content.ContentResolver;
 import android.net.Uri;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.aragram.Repository.UserRepository;
+import com.example.aragram.repository.UserRepository;
 import com.example.aragram.model.User;
 
 public class EditProfileViewModel extends ViewModel {
@@ -16,7 +14,7 @@ public class EditProfileViewModel extends ViewModel {
     UserRepository userRepository;
 
     public EditProfileViewModel() {
-        userRepository=UserRepository.getInstance();
+        userRepository= UserRepository.getInstance();
         changeStatus=userRepository.getChangeStatus();
         uploadPhotoStatus=userRepository.getUploadPhotoStatus();
 

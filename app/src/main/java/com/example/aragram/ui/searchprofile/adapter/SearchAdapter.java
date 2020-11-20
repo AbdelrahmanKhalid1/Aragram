@@ -9,18 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aragram.R;
 import com.example.aragram.model.User;
-import com.example.aragram.ui.FollowersProfiels.FollowersViewModel;
-import com.example.aragram.ui.searchprofile.SearchProfileViewModel;
-import com.example.aragram.ui.searchprofile.fragment.SearchFragmentViewModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

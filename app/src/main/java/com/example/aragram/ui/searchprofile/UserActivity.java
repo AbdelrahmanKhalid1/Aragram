@@ -1,10 +1,5 @@
 package com.example.aragram.ui.searchprofile;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,14 +9,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.aragram.R;
 import com.example.aragram.model.User;
-import com.example.aragram.ui.FollowersProfiels.FollowersActivity;
+import com.example.aragram.ui.followersprofile.FollowersActivity;
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
+import java.util.Objects;
 
-public class SearchProfile extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
     User user;
     TextView numberOfPosts;
     ImageView profilePictureImage;
@@ -29,8 +29,7 @@ public class SearchProfile extends AppCompatActivity {
     TextView followingView;
     Button followButton;
     Button messageButton;
-    TextView toolbarText;
-    SearchProfileViewModel searchProfileViewModel;
+    UserViewModel userViewModel;
     Boolean checkUnFollow=false;
     TextView bioUser;
 
@@ -41,8 +40,8 @@ public class SearchProfile extends AppCompatActivity {
        user= (User) getIntent().getExtras().getSerializable("user");
        initUI();
        displayUserData(user);
-       searchProfileViewModel.checkPerson(user);
-       searchProfileViewModel.getIsFollowed().observe(this, new Observer<Boolean>() {
+       userViewModel.checkPerson(user);
+       userViewModel.getIsFollowed().observe(this, new Observer<Boolean>() {
            @SuppressLint("ResourceAsColor")
            @Override
            public void onChanged(Boolean aBoolean) {
@@ -57,7 +56,7 @@ public class SearchProfile extends AppCompatActivity {
            }
        });
 
-       searchProfileViewModel.getIsLoading().observe(this, new Observer<Boolean>() {
+       userViewModel.getIsLoading().observe(this, new Observer<Boolean>() {
            @SuppressLint("ResourceAsColor")
            @Override
            public void onChanged(Boolean aBoolean) {
@@ -71,11 +70,11 @@ public class SearchProfile extends AppCompatActivity {
                }
                else
                {
-                   Toast.makeText(SearchProfile.this, "lol No!!!!", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(UserActivity.this, "lol No!!!!", Toast.LENGTH_SHORT).show();
                }
            }
        });
-       searchProfileViewModel.getIsUnFollowed().observe(this, new Observer<Boolean>() {
+       userViewModel.getIsUnFollowed().observe(this, new Observer<Boolean>() {
            @SuppressLint("ResourceAsColor")
            @Override
            public void onChanged(Boolean aBoolean) {
@@ -98,18 +97,21 @@ public class SearchProfile extends AppCompatActivity {
         followerView=findViewById(R.id.number_of_followers);
         followButton=findViewById(R.id.follow_button);
         messageButton=findViewById(R.id.message_button);
-        toolbarText=findViewById(R.id.toolbar_text);
-        searchProfileViewModel= new ViewModelProvider(this).get(SearchProfileViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         profilePictureImage=findViewById(R.id.user_profile_picture);
         bioUser=findViewById(R.id.textView4);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void displayUserData(User user) {
         numberOfPosts.setText(String.valueOf(user.getPosts()));
         followerView.setText(String.valueOf(user.getFollowers()));
         followingView.setText(String.valueOf(user.getFollowing()));
-        toolbarText.setText(user.getUsername());
+        Objects.requireNonNull(getSupportActionBar()).setTitle(user.getUsername());
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
+
+//        toolbarText.setText(user.getUsername());
         if(user.getUserProfilePicture()!=null)
         {
             Picasso.with(this).load(user.getUserProfilePicture()).into(profilePictureImage);
@@ -123,11 +125,11 @@ public class SearchProfile extends AppCompatActivity {
     public void followPerson(View view) {
         if(!checkUnFollow)
         {
-            searchProfileViewModel.followPerson(user.getUsername());
+            userViewModel.followPerson(user.getUsername());
         }
         else
         {
-            searchProfileViewModel.unFollowPerson(user.getUsername());
+            userViewModel.unFollowPerson(user.getUsername());
             checkUnFollow=false;
         }
 

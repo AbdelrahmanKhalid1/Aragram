@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/fragment_post_imageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_post_caption"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_post_imageContainer">
+        <EditText
+            android:hint="Write a caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+
+        android:text="Share"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="20dp"
+        android:id="@+id/fragment_post_share"
+        android:layout_below="@id/fragment_post_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

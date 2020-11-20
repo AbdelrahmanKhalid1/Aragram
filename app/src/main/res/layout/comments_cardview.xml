@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/comments_cardview_profile_image"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:id="@+id/comments_cardview_profile_name"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@id/comments_cardview_profile_image"
+            android:text="Profile Name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+
+            android:textColor="@android:color/black"
+            android:text="Comments description"
+            android:id="@+id/comments_cardview_comment"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@id/comments_cardview_profile_image"
+            android:layout_below="@id/comments_cardview_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/comments_cardview_comment_like_img"
+            android:src="@drawable/fav_comments"
+            android:background="@null"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@id/comments_cardview_comment_like_img"
+            android:layout_alignStart="@id/comments_cardview_profile_name"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/comments_cardview_comment"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/comments_cardview_comment_time"
+                android:text="hh m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/comments_cardview_comment_number_like"
+                android:text="1 like"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/comments_cardview_comment_reply"
+                android:text="Reply"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
